@@ -9,21 +9,29 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
 	<script>
-		$(function() {						
+		$(function() {		
+			var myEvents = [];
+			
 			//.fullCalendar( ‘destroy’ ) - Removes elements, events handlers, and internal data
 			 
   			// page is now ready, initialize the calendar...
-			var myEvents = [];
-			myEvents[0] = {
-				title: "NM",
-				start: "2020-02-03",
-				end: "2020-02-04"
-			};
-			myEvents[1] = {
-				title: "NM",
-				start: "2020-02-03",
-				end: "2020-02-05"
-			};
+			var url_string = window.location.href;
+			var url = new URL(url_string);
+			var myTitle = "";
+			var myStart = "";
+			var myEnd = "";
+			var i = 1;
+			
+			myTitle = url.searchParams.get("title" + i);
+			while (myTitle.length != 0) {
+  				myEvents[i-1] = {
+					title: myTitle,
+					start: url.searchParams.get("start" + i),
+					end: url.searchParams.get("end" + i)
+				}
+  				i++;
+				myTitle = url.searchParams.get("title" + i);
+			}												
 
   			$('#calendar').fullCalendar({
     				// put your options and callbacks here
