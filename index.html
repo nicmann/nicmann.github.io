@@ -5,17 +5,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
 	<script>
-		var calendar = new Calendar(calendarEl, {
-  defaultDate: '2014-11-10',
-  defaultView: 'timeGridWeek',
-  events: [
-    {
-      start: '2014-11-10T10:00:00',
-      end: '2014-11-10T16:00:00',
-      rendering: 'background'
-    }
-  ]
-});
+		$(function() {
+  			// page is now ready, initialize the calendar...
+
+  			$('#calendar').fullCalendar({
+    				// put your options and callbacks here
+  			})
+
+		});
 	</script>
 </header>
 <body>
