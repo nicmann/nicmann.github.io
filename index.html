@@ -23,7 +23,7 @@
 			var i = 1;
 			
 			myTitle = url.searchParams.get("title" + i);
-			while (myTitle.length != 0) {
+			while (myTitle != null) {
   				myEvents[i-1] = {
 					title: myTitle,
 					start: url.searchParams.get("start" + i),
