@@ -5,84 +5,16 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-  			var calendarEl = document.getElementById('calendar');
-
-  			var calendar = new FullCalendar.Calendar(calendarEl, {
-    				plugins: [ 'dayGrid' ],
-    				defaultView: 'dayGridMonth',
-    				defaultDate: '2020-02-12',
-
-    				eventRender: function(info) {
-      				var tooltip = new Tooltip(info.el, {
-        			title: info.event.extendedProps.description,
-        			placement: 'top',
-        			trigger: 'hover',
-        			container: 'body'
-      			});
-    		},
-
-    		events: [
-      		{
-        		title: 'All Day Event',
-        		description: 'description for All Day Event',
-        		start: '2020-02-01'
-      		},
-      		{
-        title: 'Long Event',
-        description: 'description for Long Event',
-        start: '2020-02-07',
-        end: '2020-02-10'
-      },
-      {
-        groupId: '999',
-        title: 'Repeating Event',
-        description: 'description for Repeating Event',
-        start: '2020-02-09T16:00:00'
-      },
-      {
-        groupId: '999',
-        title: 'Repeating Event',
-        description: 'description for Repeating Event',
-        start: '2020-02-16T16:00:00'
-      },
-      {
-        title: 'Conference',
-        description: 'description for Conference',
-        start: '2020-02-11',
-        end: '2020-02-13'
-      },
-      {
-        title: 'Meeting',
-        description: 'description for Meeting',
-        start: '2020-02-12T10:30:00',
-        end: '2020-02-12T12:30:00'
-      },
-      {
-        title: 'Lunch',
-        description: 'description for Lunch',
-        start: '2020-02-12T12:00:00'
-      },
-      {
-        title: 'Meeting',
-        description: 'description for Meeting',
-        start: '2020-02-12T14:30:00'
-      },
-      {
-        title: 'Birthday Party',
-        description: 'description for Birthday Party',
-        start: '2020-02-13T07:00:00'
-      },
-      {
-        title: 'Click for Google',
-        description: 'description for Click for Google',
-        url: 'http://google.com/',
-        start: '2020-02-28'
-      }
-    ]
-  });
-
-  calendar.render();
+		var calendar = new Calendar(calendarEl, {
+  defaultDate: '2014-11-10',
+  defaultView: 'timeGridWeek',
+  events: [
+    {
+      start: '2014-11-10T10:00:00',
+      end: '2014-11-10T16:00:00',
+      rendering: 'background'
+    }
+  ]
 });
 	</script>
 </header>
